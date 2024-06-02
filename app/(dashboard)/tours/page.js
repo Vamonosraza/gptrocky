@@ -2,8 +2,8 @@ import React from 'react'
 
 const ToursPage = () => {
   return (
-    <div>page</div>
+    <div>Tourspage</div>
   )
 }
 
-export default Tourspage
+export default ToursPage
