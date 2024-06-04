@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 const NewTour = () => {
     const {mutate,isPending,data:tour} = useMutation({
         mutationFn:async (destination) => {
-            const NewTour = await generateTourResponse(destination)
+            const newTour = await generateTourResponse(destination)
             if(newTour){
                 return newTour
             }

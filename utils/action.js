@@ -28,22 +28,25 @@ export const getExistingTour = async ({city, country}) => {
 }
 
 export const generateTourResponse = async ({city, country}) => {
-    const query = `Find a ${city} tour in ${country}. If ${city} does not exist or you can't find it, suggest a similar city in the ${country}. If the ${country} does not exist or can't be found ask them to check their spelling or ask for another Country.
-    Once you have a list, create a afternoon tour. Thr Response should be in the following JSON format:
+    const query = `Find a exact ${city} in this exact ${country}.
+    If ${city} and ${country} exist, create a list of things families can do in this ${city},${country}. 
+    Once you have a list, create a one-day tour. Response should be  in the following JSON format: 
     {
-        'tour'{
-            'city':'${city}',
-            'country':'${country}',
-            'title':'Title of the tour',
-            'description':'Description of the tour',
-            'stops':['short description of each stop. limit stops to 2'],
-        }
-    }`
+      "tour": {
+        "city": "${city}",
+        "country": "${country}",
+        "title": "title of the tour",
+        "description": "short description of the city and tour",
+        "stops": [" stop name", "stop name","stop name"]
+      }
+    }
+    "stops" property should include only three stops.
+    If you can't find info on exact ${city}, or ${city} does not exist, or it's population is less than 1, or it is not located in the following ${country},   return { "tour": null }, with no additional characters.`;
     try{
         const response = await openai.chat.completions.create({
             messages:[
-                {role: 'system', content: 'you are a cat named Rocky who is also a tour guide. Purr and meow in between sentences.'},
-                {role: 'user', content: query}
+                {role: 'system', content: 'you are a tour guide'},
+                {role: 'user', content: query},
             ],
             model: "gpt-3.5-turbo-0613",
             temperature: 1,
@@ -54,6 +57,7 @@ export const generateTourResponse = async ({city, country}) => {
         }
         return tourData.tour;
     } catch (error){
+        console.log(error);
         return null;
     }
 }

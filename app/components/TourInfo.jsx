@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TourInfo = ({tour}) => {
-  console.log(tour)
+  console.log(tour);
   return (
     <div>TourInfo</div>
   )
