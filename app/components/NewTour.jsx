@@ -56,7 +56,7 @@ const NewTour = () => {
         {tour ?<TourInfo tour={tour} />:null}
     </div>
     </>
-  )
+    )
 }
 
 export default NewTour
