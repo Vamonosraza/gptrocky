@@ -37,10 +37,10 @@ export const generateTourResponse = async ({city, country}) => {
         "country": "${country}",
         "title": "title of the tour",
         "description": "short description of the city and tour",
-        "stops": [" stop name", "stop name","stop name"]
+        "stops": [" stop description", "stop description","stop description"]
       }
     }
-    "stops" property should include only three stops.
+    "stops" property should include only three stops with short 2 sentence description of each. describe each stop as if you were a cat.
     If you can't find info on exact ${city}, or ${city} does not exist, or it's population is less than 1, or it is not located in the following ${country},   return { "tour": null }, with no additional characters.`;
     try{
         const response = await openai.chat.completions.create({
