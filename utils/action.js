@@ -112,3 +112,11 @@ const openai = new OpenAI({
         })
         return tours;
     };
+
+    export const getSingleTour = async (id) => {
+        return prisma.tour.findUnique({
+            where:{
+                id,
+            }
+        })
+    }
