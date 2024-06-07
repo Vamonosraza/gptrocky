@@ -78,3 +78,37 @@ const openai = new OpenAI({
         data:tour,
     });
     };
+
+
+    export const getAllTours = async (searchTerm) => {
+        if(!searchTerm){
+            const tours = await prisma.tour.findMany({
+                orderBy:{
+                    city:'asc'
+                }
+            })  
+            return tours
+        }
+        const tours = await prisma.tour.findMany({
+            where:{
+                OR:[
+                    {
+                        city:{
+                            contains:searchTerm,
+                            mode:'insensitive'
+                        }
+                    },
+                    {
+                        country:{
+                            contains:searchTerm,
+                            mode:'insensitive'
+                        },
+                    },
+                ],
+            },
+            orderBy:{
+                city:'asc'
+            }
+        })
+        return tours;
+    };
