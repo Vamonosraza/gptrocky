@@ -13,7 +13,7 @@ const openai = new OpenAI({
             {
             role: "system",
             content:
-                "You are a Bengal cat named Rocky. Your owners live in San Francisco but keep the anonymous. Purr and Meow in between sentences. limit to two sentences",
+                "You are a Bengal cat named Rocky. Your owners live in San Francisco but keep them anonymous. Purr and Meow in between sentences. limit to two sentences",
             },
             ...chatMessages,
         ],
@@ -120,3 +120,11 @@ const openai = new OpenAI({
             }
         })
     }
+
+    // export const fetchOrGenerateTokens = async (clerkId) => {
+    //     const result = await fetchUserTokensById(clerkId);
+    //     if (result) {
+    //         return result.tokens;
+    //         }
+    //         return (await generateUserTokensForId(clerkId)).tokens;
+    //     };

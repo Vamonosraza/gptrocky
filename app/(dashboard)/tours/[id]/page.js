@@ -32,7 +32,7 @@ const SingleTOurPage = async ({params}) => {
         ): null}
         <TourInfo tour={tour} />
     </div>
-  )
+    )
 }
 
 export default SingleTOurPage

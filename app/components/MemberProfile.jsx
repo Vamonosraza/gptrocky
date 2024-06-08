@@ -1,10 +1,12 @@
 import React from 'react'
 import { UserButton} from '@clerk/nextjs'
 import { auth, currentUser } from '@clerk/nextjs/server'
+// import { fetchOrGenerateUser } from '@/utils/action'
 
-const MemberProfile = async() => {
+const MemberProfile = async () => {
     const user = await currentUser();
     const {userId } = auth();
+    // await fetchOrGenerateUser(userId);
     // console.log(user);
 
     return (
