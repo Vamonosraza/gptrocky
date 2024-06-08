@@ -7,7 +7,7 @@ const HomePage = () => {
       <div className='hero-content text-center'>
         <div className='max-w-md'>
           <h1 className='text-6xl font-bold text-primary'>
-            GPTRocky
+            RockyAI
           </h1>
           <p className='py-6 text-lg leading-loose'>
             Your Cat companion for the road
