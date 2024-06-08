@@ -46,7 +46,8 @@ const openai = new OpenAI({
         const response = await openai.chat.completions.create({
         messages: [
             { role: "system", content: "you are a tour guide" },
-            { role: "user", content: query },
+            { role: "user", content: query }, 
+            
         ],
         model: "gpt-3.5-turbo-0613",
         temperature: 1,
