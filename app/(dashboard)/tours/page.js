@@ -1,5 +1,5 @@
 import React from 'react'
-import ToursPage from '@/app/components/ToursPage'
+import ToursPage from '/app/components/ToursPage'
 import { dehydrate, HydrateBoundary, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import { getAllTours } from '@/utils/action'
 

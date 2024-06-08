@@ -1,9 +1,10 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import { getAllTours } from '@/utils/action'
 import React from 'react'
 import ToursList from './ToursList'
+import { getAllTours } from '@/utils/action'
+
 
 const ToursPage = () => {
     const [searchValue, setSearchValue] = React.useState('')
