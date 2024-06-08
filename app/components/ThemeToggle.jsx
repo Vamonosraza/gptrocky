@@ -10,6 +10,7 @@ const themes = {
 
 const ThemeToggle = () => {
     const [theme, setTheme] = useState(themes.nord);
+    
     const toggleTheme = () => {
         const newTheme = theme === themes.nord ? themes.dracula : themes.nord;
         document.documentElement.setAttribute('data-theme', newTheme);
